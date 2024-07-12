@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useIntl } from 'react-intl';
 import { PageTitle } from '../../../features/layout/core';
-import { ToolbarWrapper } from '../../../features/layout/components/toolbar';
+// import { ToolbarWrapper } from '../../../features/layout/components/toolbar';
 import { Content } from '../../../features/layout/components/content';
 import { ChartsWidget2, TablesWidget13 } from '../../../features/partials/widgets';
 import { ChartsWidget9 } from '../../../features/partials/widgets/charts/ChartsWidget9';
@@ -9,7 +9,7 @@ import { Statistics } from '../../modules/widgets/components/Statistics';
 
 const DashboardPage: FC = () => (
   <>
-    <ToolbarWrapper />
+    {/* <ToolbarWrapper /> */}
     <Content>
       <div className="row">
         <div className="col-md-3">

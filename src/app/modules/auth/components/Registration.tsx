@@ -17,6 +17,8 @@ const initialValues = {
   password: '',
   changepassword: '',
   acceptTerms: false,
+  profilePicture: '', // Añadido
+
 };
 
 const countryCodes = [
@@ -40,7 +42,11 @@ export function Registration() {
           values.fullname,
           values.lastname,
           values.password,
-          values.changepassword
+          values.changepassword,
+          values.countryCode,
+          values.mobil,
+          values.acceptTerms,
+          values.profilePicture
         );
         saveAuth(auth);
         const { data: user } = await getUserByToken(auth.api_token);

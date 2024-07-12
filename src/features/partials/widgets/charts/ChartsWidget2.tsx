@@ -65,10 +65,11 @@ const ChartsWidget2: FC<Props> = ({ className }) => {
 export { ChartsWidget2 };
 
 function getChartOptions(height: number): ApexOptions {
-  const labelColor = getCSSVariableValue('--bs-gray-500');
+  const labelColor = getCSSVariableValue('--bs-gray-20');
   const borderColor = getCSSVariableValue('--bs-gray-200');
-  const baseColor = getCSSVariableValue('--bs-warning');
+  const baseColor = getCSSVariableValue('--bs-green');
   const secondaryColor = getCSSVariableValue('--bs-gray-300');
+  const tertiaryColor = getCSSVariableValue('--bs-blue');
 
   return {
     series: [
@@ -79,6 +80,10 @@ function getChartOptions(height: number): ApexOptions {
       {
         name: 'Revenue',
         data: [76, 85, 101, 98, 87, 105],
+      },
+      {
+        name: 'Expenses',
+        data: [35, 41, 36, 26, 45, 48],
       },
     ],
     chart: {
@@ -92,8 +97,8 @@ function getChartOptions(height: number): ApexOptions {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '30%',
-        borderRadius: 5,
+        columnWidth: '70%',
+        borderRadius: 0,
       },
     },
     legend: {
@@ -126,7 +131,7 @@ function getChartOptions(height: number): ApexOptions {
       labels: {
         style: {
           colors: labelColor,
-          fontSize: '12px',
+          fontSize: '10px',
         },
       },
     },
@@ -164,7 +169,7 @@ function getChartOptions(height: number): ApexOptions {
         },
       },
     },
-    colors: [baseColor, secondaryColor],
+    colors: [baseColor, secondaryColor, tertiaryColor],
     grid: {
       borderColor: borderColor,
       strokeDashArray: 4,

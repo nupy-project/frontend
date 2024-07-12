@@ -11,7 +11,7 @@ import { loginSchema } from '../scheme/schemes';
 // import './Login.scss';
 
 const initialValues = {
-  email: 'users@example.com',
+  email: 'user@example.com',
   password: 'password123',
 };
 

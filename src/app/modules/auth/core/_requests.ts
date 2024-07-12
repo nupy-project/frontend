@@ -23,17 +23,25 @@ export function login(email: string, password: string) {
 // Server should return AuthModel
 export function register(
   email: string,
-  firstname: string,
+  fullname: string,
   lastname: string,
   password: string,
-  password_confirmation: string
+  password_confirmation: string,
+  countryCode: string,
+  mobil: string,
+  acceptTerms: boolean,
+  profilePicture: string
 ) {
   return axios.post(REGISTER_URL, {
     email,
-    first_name: firstname,
-    last_name: lastname,
+    fullname,
+    lastname,
     password,
     password_confirmation,
+    countryCode,
+    mobile: mobil,
+    terminos: acceptTerms,
+    profilePicture,
   });
 }
 
