@@ -3,7 +3,6 @@ import {FC} from 'react'
 import {Link} from 'react-router-dom'
 import {useAuth} from '../../../../app/modules/auth'
 import {Languages} from './Languages'
-import {toAbsoluteUrl} from '../../../helpers'
 
 const HeaderUserMenu: FC = () => {
   const {currentUser, logout} = useAuth()
@@ -15,12 +14,17 @@ const HeaderUserMenu: FC = () => {
       <div className='menu-item px-3'>
         <div className='menu-content d-flex align-items-center px-3'>
           <div className='symbol symbol-50px me-5'>
-            <img alt='Logo' src={toAbsoluteUrl('media/avatars/300-3.jpg')} />
+          <img
+      alt="Profile Image"
+      src={`${currentUser?.profilePicture}`}
+      className="rounded-circle"
+      style={{ width: '40px', height: '40px', objectFit: 'cover' }} // Asegura que la imagen sea cuadrada
+    />              
           </div>
 
           <div className='d-flex flex-column'>
             <div className='fw-bolder d-flex align-items-center fs-5'>
-              {currentUser?.first_name} {currentUser?.first_name}
+              {currentUser?.fullname}
               <span className='badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2'>Verificado</span>
             </div>
             <a className='fw-bold text-muted text-hover-primary fs-7'>

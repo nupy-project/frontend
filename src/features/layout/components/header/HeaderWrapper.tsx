@@ -52,7 +52,7 @@ export function HeaderWrapper() {
                   <Link to='/dashboard' className='d-lg-none'>
                       <img
                         alt='Logo'
-                        src={toAbsoluteUrl('media/logos/default-small.svg')}
+                        src={toAbsoluteUrl('media/logos/Mesa23.png')}
                         className='h-30px'
                       />
                   </Link>
@@ -68,7 +68,7 @@ export function HeaderWrapper() {
               {config.layoutType === 'dark-header' ? (
                 <img
                   alt='Logo'
-                  src={toAbsoluteUrl('media/logos/default-dark.svg')}
+                  src={toAbsoluteUrl('media/logos/Mesa23.png')}
                   className='h-20px h-lg-30px app-sidebar-logo-default'
                 />
               ) : (
@@ -80,7 +80,7 @@ export function HeaderWrapper() {
                   />
                   <img
                     alt='Logo'
-                    src={toAbsoluteUrl('media/logos/default-dark.svg')}
+                    src={toAbsoluteUrl('media/logos/Mesa23.png')}
                     className='h-20px h-lg-30px app-sidebar-logo-default theme-dark-show'
                   />
                 </>

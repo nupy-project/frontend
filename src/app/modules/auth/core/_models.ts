@@ -50,9 +50,11 @@ export interface UserModel {
   username: string
   password: string | undefined
   email: string
+
   first_name: string
   last_name: string
   fullname?: string
+  profilePicture?: string
   occupation?: string
   companyName?: string
   phone?: string
