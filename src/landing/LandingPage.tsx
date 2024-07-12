@@ -1,4 +1,3 @@
-import React from 'react'
 import { computer, Colash1, Colash2, targeta, Beneficio, wallet, Visa, Efecty, Tron, Baloto, cel, Footer } from '../features/assets/ts';
 import HeaderLanding from './components/HeaderLanding';
 import './LandingPage.scss';

@@ -55,7 +55,7 @@ export interface UserModel {
   last_name: string
   fullname?: string
   profilePicture?: string
-  occupation?: string
+  occupation?: string 
   companyName?: string
   phone?: string
   roles?: Array<number>

@@ -49,7 +49,7 @@ const Group: FC = () => {
 
                       <div className='ms-5'>
                         <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
-                          Melody Macy
+                          Melody Macyd
                         </a>
                         <div className='fw-bold text-gray-500'>melody@altbox.com</div>
                       </div>
