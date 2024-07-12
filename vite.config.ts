@@ -7,8 +7,16 @@ export default defineConfig({
   base: "/nupay/react/dev/",
   build: {
     chunkSizeWarningLimit: 3000,
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+      },
+    },
   },
-  server:{
-    port:3000
+  publicDir: 'public', // Asegúrate de que esta línea esté presente
+  server: {
+    port: 3000
   }
 })
