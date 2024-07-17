@@ -15,15 +15,15 @@ const UsersListToolbar = () => {
       {/* begin::Export */}
       <button type='button' className='btn btn-light-primary me-3'>
         <KTIcon iconName='exit-up' className='fs-2' />
-        Export
+        Exportar
       </button>
       {/* end::Export */}
 
       {/* begin::Add user */}
-      <button type='button' className='btn btn-primary' onClick={openAddUserModal}>
+      {/* <button type='button' className='btn btn-primary' onClick={openAddUserModal}>
         <KTIcon iconName='plus' className='fs-2' />
         Add User
-      </button>
+      </button> */}
       {/* end::Add user */}
     </div>
   )
