@@ -104,7 +104,7 @@ const UsersListPagination = () => {
               })}
             >
               <a onClick={() => updatePage(1)} style={{cursor: 'pointer'}} className='page-link'>
-                First
+                P1
               </a>
             </li>
             {paginationLinks
@@ -143,7 +143,7 @@ const UsersListPagination = () => {
                 style={{cursor: 'pointer'}}
                 className='page-link'
               >
-                Last
+                Ultima
               </a>
             </li>
           </ul>

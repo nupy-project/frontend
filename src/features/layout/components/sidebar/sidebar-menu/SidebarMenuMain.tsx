@@ -61,12 +61,12 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/apps/chat/drawer-chat' title='Drawer Chart' hasBullet={true} />
       </SidebarMenuItemWithSub> */}
       {/* meotdo disponible para los users admin */}
-      {/* <SidebarMenuItem
+      <SidebarMenuItem
         to='/apps/user-management/users'
         icon='abstract-28'
-        title='User management'
+        title='lista usuarios'
         fontIcon='bi-layers'
-      /> */}
+      />
     
     </>
   )

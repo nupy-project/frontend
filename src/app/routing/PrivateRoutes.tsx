@@ -11,6 +11,7 @@ import { DashboardWrapperDispersion } from '../pages/dispersion/DispersionDashbo
 import { DashboardWrapperIngress } from '../pages/Ingresos/IngressDashboardWrapper'
 import { DashboardWrapperEgress } from '../pages/salidas/EgressDashboardWrapper'
 import { DashboardWrapperTarget } from '../pages/Targetas/TargetDashboardWrapper'
+import UsersPage from '../modules/apps/user-management/UsersPage'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -77,14 +78,14 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         /> */}
-        {/* <Route
+        <Route
           path='apps/user-management/*'
           element={
             <SuspensedView>
               <UsersPage />
             </SuspensedView>
           }
-        /> */}
+        />
         {/* Page Not Found */}
         <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
