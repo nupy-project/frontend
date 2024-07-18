@@ -1,41 +1,42 @@
-import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
-import backgroundImage from '../../../features/assets/images/fondoLogin.png';
+
+import {useEffect} from 'react'
+import {Outlet} from 'react-router-dom'
+// import {toAbsoluteUrl} from '../../../features/helpers'
+import backgroundImage from '../../../features/assets/images/fondoLogin.png'
 
 const AuthLayout = () => {
   useEffect(() => {
-    const root = document.getElementById('root');
+    const root = document.getElementById('root')
     if (root) {
-      root.style.height = '100%';
+      root.style.height = '100%'
     }
     return () => {
       if (root) {
-        root.style.height = 'auto';
+        root.style.height = 'auto'
       }
-    };
-  }, []);
+    }
+  }, [])
 
   return (
-    <div 
-      className='d-flex flex-column flex-lg-row flex-column-fluid h-100'  
-      style={{
-        width: '100vw',
-        height: '100vh',
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed', // Asegura que la imagen de fondo se mantenga fija
-      }}
-    >
+    <div className='d-flex flex-column flex-lg-row flex-column-fluid '  style={{
+      width:'100vw',
+      height:'auto',
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+       
+     
+    }}>
       {/* begin::Body */}
-      <div className='d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1'>
+      <div className='d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1 w-100 h-100'>
         {/* begin::Form */}
-        <div className='d-flex flex-center flex-column flex-lg-row-fluid'>
+        <div className='d-flex flex-center flex-column flex-lg-row-fluid w-100 h-100'>
           {/* begin::Wrapper */}
-          <div>
+          <div className='w-30 h-100'>
             <Outlet />
           </div>
         </div>
+
       </div>
 
       {/* <div
@@ -56,7 +57,7 @@ const AuthLayout = () => {
         </div>
       </div> */}
     </div>
-  );
+  )
 }
 
-export { AuthLayout };
+export {AuthLayout}
