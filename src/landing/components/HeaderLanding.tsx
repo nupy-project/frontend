@@ -12,7 +12,7 @@ const HeaderLanding = () => {
             id="kt_landing_menu_toggle"
           >
             <i className="ki-duotone ki-abstract-14 fs-2hx text-dark">
-              <span className="path1">Hola</span>
+              <span className="path1"></span>
               <span className="path2"></span>
             </i>
           </button>
