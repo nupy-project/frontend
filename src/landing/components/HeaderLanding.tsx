@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FloatingChatButton from "./FloatingChatButton";
 import Logo from'../../features/assets/images/Footer.png'
+import {ThemeModeSwitcher} from '../../features/partials/layout/theme-mode/ThemeModeSwitcher'
+import {Languages} from '../../features/partials/layout/header-menus/Languages'
+import clsx from "clsx";
 
 const HeaderLanding = () => {
   return (
@@ -18,9 +21,9 @@ const HeaderLanding = () => {
                 <span className="path2"></span>
               </i>
             </button>
-            <Link to="/" className="text-dark text-decoration-none fs-3 fw-bold">
+            <a href="#inicio" className="text-dark text-decoration-none fs-3 fw-bold">
               <img src={Logo} alt="Logo" className="w-50"/>
-            </Link>
+            </a>
           </div>
 
           <div className="d-lg-block" id="kt_header_nav_wrapper">
@@ -44,7 +47,7 @@ const HeaderLanding = () => {
                 <div className="menu-item">
                   <a
                     className="menu-link nav-link active py-3 px-4 px-xxl-6 text-dark"
-                    href="#kt_body"
+                    href="#Productos"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
                   >
@@ -55,7 +58,7 @@ const HeaderLanding = () => {
                 <div className="menu-item">
                   <a
                     className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
-                    href="#how-it-works"
+                    href="#Soluciones"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
                   >
@@ -66,7 +69,7 @@ const HeaderLanding = () => {
                 <div className="menu-item">
                   <a
                     className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
-                    href="#achievements"
+                    href="#Tarifas"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
                   >
@@ -77,7 +80,7 @@ const HeaderLanding = () => {
                 <div className="menu-item">
                   <a
                     className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
-                    href="#team"
+                    href="#Contacta"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
                   >
@@ -87,8 +90,13 @@ const HeaderLanding = () => {
               </div>
             </div>
           </div>
-
+          
+          <ThemeModeSwitcher
+          toggleBtnClass={clsx("btn-active-light-primary btn-custom")}
+        />
+          <Languages/>
           <div className="flex-equal text-end ms-1">
+            
             <Link
               to="/auth/login"
               className="btn btn-success"
@@ -101,7 +109,10 @@ const HeaderLanding = () => {
             >
               Iniciar Sesión
             </Link>
+
+            
           </div>
+          
         </div>
 
         <FloatingChatButton /> {/* Añadimos el botón flotante */}

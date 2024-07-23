@@ -82,8 +82,8 @@ export function Registration() {
         {/* begin::Heading */}
         <div className=' mb-11'>
         <h1 className="text-center mb-4">
-                <b className="text-center mb-4" style={{ fontSize: '2em' }}>NU</b>
-                <span className="text-center mb-4" style={{ fontSize: '1.5em', width: '100%', backgroundColor: '#0beea6', borderRadius: '10px', padding: '4px' }}>
+                <b className="text-center mb-4" style={{ fontSize: '1.5em' }}>NU</b>
+                <span className="text-center mb-4" style={{ fontSize: '1em', width: '100%', backgroundColor: '#0beea6', borderRadius: '10px', padding: '4px' }}>
                   <b>Pay</b>
                 </span>
                 FINANCE

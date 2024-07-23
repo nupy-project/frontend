@@ -20,17 +20,18 @@ const FloatingChatButton: React.FC = () => {
   return (
     <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}>
       <button
-        onClick={toggleChat}
-        className="btn btn-success btn-lg rounded-circle"
-        style={{ width: '60px', height: '60px' }}
-      >
-        <i className="bi bi-chat-dots-fill" style={{ fontSize: '24px' }}></i>
-      </button>
+  onClick={toggleChat}
+  className="btn btn-success btn-lg rounded-circle position-relative"
+  style={{ width: '60px', height: '60px', padding: '0' }}
+>
+  <i className="bi bi-chat-dots-fill position-absolute top-50 start-50 translate-middle" style={{ fontSize: '24px',padding:'0' }}></i>
+</button>
+
       {isOpen && (
         <div className="card" style={{ position: 'absolute', bottom: '70px', right: '0', width: '300px', maxHeight: '400px', display: 'flex', flexDirection: 'column' }}>
           <div className="card-header">
             Chatbot
-            <button onClick={toggleChat} className="btn-close float-end"></button>
+            <button onClick={toggleChat} className="btn-close float-center"></button>
           </div>
           <div className="card-body overflow-auto" style={{ flex: '1 1 auto' }}>
             <p>Hola, ¿en qué puedo ayudarte?</p>
