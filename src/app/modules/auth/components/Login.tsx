@@ -6,9 +6,7 @@ import { getUserByToken, login } from '../core/_requests';
 import { toAbsoluteUrl } from '../../../../features/helpers';
 import { useAuth } from '../core/Auth';
 import { loginSchema } from '../scheme/schemes';
-import backgroundImage from '../../../../features/assets/images/Mesa67.png';
 import loginImage from '../../../../features/assets/images/Mesa68.png';
-import luna from '../../../../features/assets/images/luna.png';
 
 const initialValues = {
   email: '',
@@ -42,61 +40,62 @@ export function Login() {
 
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow-lg" style={{ maxWidth: '800px' }}>
+      <div className="card shadow-lg" style={{ maxWidth: '900px', width: '100%' }}>
         <div className="row g-0">
-          <div className="col-md-6">
-            <div className="card-body">
-              <h1 className="text-center mb-4">
-                <b className="text-center mb-4" style={{ fontSize: '1.5em' }}>NU</b>
-                <span className="text-center mb-4" style={{ fontSize: '1em', width: '100%', backgroundColor: '#0beea6', borderRadius: '10px', padding: '4px' }}>
+          <div className="col-md-6 col-12">
+            <div className="card-body p-10 p-md-5">
+              <h2 className="text-center mb-4 text-nowrap">
+                <b className="text-center mb-4" style={{ fontSize: '1.8em' }}>NU</b>
+                <strong className="text-center mb-4" style={{ width: '100%', backgroundColor: '#0beea6', borderRadius: '12px', padding: '8px' }}>
                   <b>Pay</b>
-                </span>
+                </strong>
                 FINANCE
-              </h1>
-              <br />
-              <h3 className="card-subtitle text-left mb-4" style={{ fontSize: '2.1em' }}>
+              </h2>
+              <h3 className="card-subtitle text-left mb-4" style={{ fontSize: '2.3em' }}>
                 <b>¡Bienvenido!</b>
               </h3>
-              <div className="row g-3 mb-3">
-                <div className="col-md-6">
+              <div className="row g-3 mb-4">
+                <div className="col-md-6 col-12">
                   <a
                     href="#"
                     className="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100"
+                    style={{ padding: '12px', fontSize: '1.1em' }}
                   >
                     <img
                       alt="Logo"
                       src={toAbsoluteUrl('media/svg/brand-logos/google-icon.svg')}
-                      className="h-15px me-3"
+                      className="h-25px me-3"
                     />
                     Google
                   </a>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 col-12">
                   <a
                     href="#"
                     className="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100"
+                    style={{ padding: '12px', fontSize: '1.1em' }}
                   >
                     <img
                       alt="Logo"
                       src={toAbsoluteUrl('media/svg/brand-logos/apple-black.svg')}
-                      className="theme-light-show h-15px me-3"
+                      className="theme-light-show h-25px me-3"
                     />
                     <img
                       alt="Logo"
                       src={toAbsoluteUrl('media/svg/brand-logos/apple-black-dark.svg')}
-                      className="theme-dark-show h-15px me-3"
+                      className="theme-dark-show h-25px me-3"
                     />
                     Apple
                   </a>
                 </div>
-              </div><br />
-              <div className="separator separator-content my-3">
-                <span className="w-125px text-gray-500 fw-semibold fs-7">
+              </div>
+              <div className="separator separator-content my-4">
+                <span className="w-125px text-gray-500 fw-semibold fs-7 text-nowrap">
                   O con tu Email
                 </span>
-              </div><br />
+              </div>
               <form onSubmit={formik.handleSubmit} noValidate id="kt_login_signin_form">
-                <div className="fv-row mb-3">
+                <div className="fv-row mb-4">
                   <input
                     placeholder="Ingresa tu email"
                     {...formik.getFieldProps('email')}
@@ -108,7 +107,7 @@ export function Login() {
                     type="email"
                     name="email"
                     autoComplete="off"
-                    
+                    style={{ padding: '12px', fontSize: '1.1em' }}
                   />
                   {formik.touched.email && formik.errors.email && (
                     <div className="fv-plugins-message-container">
@@ -116,7 +115,7 @@ export function Login() {
                     </div>
                   )}
                 </div>
-                <div className="fv-row mb-3">
+                <div className="fv-row mb-4">
                   <input
                     type="password"
                     autoComplete="off"
@@ -127,7 +126,7 @@ export function Login() {
                       { 'is-invalid': formik.touched.password && formik.errors.password },
                       { 'is-valid': formik.touched.password && !formik.errors.password }
                     )}
-                  
+                    style={{ padding: '12px', fontSize: '1.1em' }}
                   />
                   {formik.touched.password && formik.errors.password && (
                     <div className="fv-plugins-message-container">
@@ -137,16 +136,17 @@ export function Login() {
                     </div>
                   )}
                 </div>
-                <div className="d-grid mb-3">
+                <div className="d-grid mb-4">
                   <button
                     type="submit"
                     id="kt_sign_in_submit"
                     className="btn btn-primary"
                     disabled={formik.isSubmitting || !formik.isValid}
                     style={{
-                      backgroundColor:'#0beea6',
-                  
-                      color:'black'
+                      backgroundColor: '#0beea6',
+                      color: 'black',
+                      padding: '12px',
+                      fontSize: '1.1em'
                     }}
                   >
                     {!loading && <span className="indicator-label"><b>Ingresar</b></span>}
@@ -158,7 +158,7 @@ export function Login() {
                     )}
                   </button>
                 </div>
-                <div className="text-center mt-3">
+                <div className="text-center mt-4">
                   <span>¿No eres miembro todavía?</span> <Link to="/auth/registration" className="text-success">Registrarse</Link>
                 </div>
               </form>

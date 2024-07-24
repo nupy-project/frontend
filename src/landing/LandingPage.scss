@@ -3,14 +3,16 @@
   font-size: 1.5rem; /* Tamaño de fuente más pequeño */
 }
 
+
 /* Modo oscuro */
 body[data-bs-theme='dark'] {
-  background-color: #0d0e12;
+  background-color: #15171c;
   color: #ffffff;
 }
 
 .landing-page.dark-mode {
-  background-color: #26272F;
+  
+  background-color: #15171c;
   color: #ffffff;
 }
 
@@ -113,7 +115,7 @@ li{
 
 /* Estilos generales de la página */
 .landing-page {
-  width: 100vw;
+  width: 100%;
   height: auto; // Ajusta la altura para que sea auto en lugar de 100vh para mejorar la adaptabilidad
   overflow-x: hidden;
   background-color: #fff;
