@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FloatingChatButton from "./FloatingChatButton";
-import Logo from'../../features/assets/images/Footer.png'
-import {ThemeModeSwitcher} from '../../features/partials/layout/theme-mode/ThemeModeSwitcher'
-import {Languages} from '../../features/partials/layout/header-menus/Languages'
+import Logo from '../../features/assets/images/Footer.png';
+import { ThemeModeSwitcher } from '../../features/partials/layout/theme-mode/ThemeModeSwitcher';
+import { Languages } from '../../features/partials/layout/header-menus/Languages';
 import clsx from "clsx";
+import { useThemeMode } from '../../features/partials/layout/theme-mode/ThemeModeProvider';
 
 const HeaderLanding = () => {
+  const { mode } = useThemeMode();
+  
   return (
-    <header className="fixed-top header-background bg-white shadow-sm">
-      <div className="container py-3 py-lg-4"> {/* Padding añadido aquí */}
+    <header className={clsx("fixed-top header-background shadow-sm", {
+      "bg-dark text-white": mode === "dark",
+      "bg-white text-dark": mode === "light"
+    })}>
+      <div className="container py-3 py-lg-4">
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center flex-equal">
             <button
@@ -26,7 +32,7 @@ const HeaderLanding = () => {
             </a>
           </div>
 
-          <div className="d-lg-block" id="kt_header_nav_wrapper">
+          <div className="d-lg-block menu-wrapper" id="kt_header_nav_wrapper">
             <div
               className="d-lg-block p-5 p-lg-0"
               data-kt-drawer="true"
@@ -46,7 +52,7 @@ const HeaderLanding = () => {
               >
                 <div className="menu-item">
                   <a
-                    className="menu-link nav-link active py-3 px-4 px-xxl-6 text-dark"
+                    className="menu-link nav-link active py-3 px-4 px-xxl-6"
                     href="#Productos"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
@@ -57,7 +63,7 @@ const HeaderLanding = () => {
 
                 <div className="menu-item">
                   <a
-                    className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
+                    className="menu-link nav-link py-3 px-4 px-xxl-6"
                     href="#Soluciones"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
@@ -68,7 +74,7 @@ const HeaderLanding = () => {
 
                 <div className="menu-item">
                   <a
-                    className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
+                    className="menu-link nav-link py-3 px-4 px-xxl-6"
                     href="#Tarifas"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
@@ -79,7 +85,7 @@ const HeaderLanding = () => {
 
                 <div className="menu-item">
                   <a
-                    className="menu-link nav-link py-3 px-4 px-xxl-6 text-dark"
+                    className="menu-link nav-link py-3 px-4 px-xxl-6"
                     href="#Contacta"
                     data-kt-scroll-toggle="true"
                     data-kt-drawer-dismiss="true"
@@ -91,12 +97,8 @@ const HeaderLanding = () => {
             </div>
           </div>
           
-          <ThemeModeSwitcher
-          toggleBtnClass={clsx("btn-active-light-primary btn-custom")}
-        />
-          <Languages/>
+         
           <div className="flex-equal text-end ms-1">
-            
             <Link
               to="/auth/login"
               className="btn btn-success"
@@ -105,17 +107,21 @@ const HeaderLanding = () => {
                 color: "#000",
                 borderRadius: "20px",
                 padding: "7px 50px",
-              }} // Añadido borderRadius
+              }}
             >
               Iniciar Sesión
             </Link>
-
             
           </div>
-          
+          <div className="flex-equal  d-flex align-items-center justify-content-center">
+          <ThemeModeSwitcher
+            toggleBtnClass={clsx("btn-active-light-primary btn-custom")}
+          />
+          <Languages />
+          </div>
         </div>
 
-        <FloatingChatButton /> {/* Añadimos el botón flotante */}
+        <FloatingChatButton /> 
 
       </div>
     </header>

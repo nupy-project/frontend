@@ -1,22 +1,26 @@
-import { computer, Colash1, Colash2, targeta, Beneficio, wallet, Visa, Efecty, Tron, Baloto, cel, Footer } from '../features/assets/ts';
+import React from 'react';
+import { useThemeMode } from '../features/partials/layout/theme-mode/ThemeModeProvider';
+import { computer, Colash1, Colash2, targeta, Beneficio, wallet, Visa, Efecty, Tron, Baloto, cel,  } from '../features/assets/ts';
+import { Footer } from '../features/assets/ts';
 import HeaderLanding from './components/HeaderLanding';
 import './LandingPage.scss';
-import clsx from "clsx";
-
-const itemClass = "ms-1 ms-md-4";
-const btnClass = "btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px";
-const userAvatarClass = "symbol-35px";
-const btnIconClass = "fs-2";
+import clsx from 'clsx';
 
 const LandingPage = () => {
+  const { mode } = useThemeMode();
+
+  const pageClass = clsx('landing-page', {
+    'dark-mode': mode === 'dark',
+  });
+
   return (
-    <div className="landing-page" >
+    <div className={pageClass}>
       <div className="grid-container">
-        <div id='inicio' className="grid-item item-combined" >
+        <div id='inicio' className="grid-item item-combined">
           <HeaderLanding />
         </div>
 
-        <div  className="grid-item item-2-3-col2 d-flex flex-column justify-content-start position-relative" style={{ maxWidth: '800px', minWidth: '500px' }}>
+        <div className="grid-item item-2-3-col2 d-flex flex-column justify-content-start position-relative" style={{ maxWidth: '800px', minWidth: '500px' }}>
           <div className="p-2 d-flex flex-column position-relative" style={{ right: '10%' }}>
             <img src={computer} alt="Computadora mostrando soluciones de pago" className="img-fluid" />
           </div>
@@ -116,24 +120,21 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div id='Contacta' className="grid-item item-12-13-col2 d-flex flex-column align-items-start justify-content-center p-8 text-center text-md-start">
-          <h2 className="display-4 mb-3"><b>Compras e intercambios internacionales (OTC)</b></h2>
-          <p className="lead text-left mb-3"><b style={{ color: '#0beea6' }}>NuPay</b> se encarga de facilitar tus <br /> compras e intercambios de forma rápida y segura.</p>
+        <div id='Contacta' className="grid-item item-12-13-col2 d-flex flex-column align-items-start justify-content-center p-8 text-center text-md-start w-100 h-100">
+          <h1 className='display-4 mb-3'>¡Contacta con <b style={{ color: '#0beea6' }}>Nosotros</b><br /> para una solución personalizada!</h1><br />
+          <span className="lead text-left mb-3">Nuestro equipo de soporte está disponible para resolver <br /> cualquier duda o inquietud que puedas tener. Contáctanos para <br /> obtener una solución que se ajuste a tus necesidades.</span>
+          <button className="btn btn-primary mt-3" style={{ backgroundColor: '#0beea6', color: '#000', borderRadius: '20px', padding: '10px 30px' }}>Contáctanos</button>
         </div>
-
-        <div className="grid-item item-12-13-col3 d-flex flex-column align-items-start justify-content-center p-8 text-center text-md-start">
-          <h2 className="display-4 mb-3"><b>Acceso a mejores <br /> oportunidades</b></h2>
-          <p className="lead text-left mb-3"><b style={{ color: '#0beea6' }}>Beneficios NuPay</b> <br />tienen en cuenta tus necesidades de pago <br />y te brindan las mejores oportunidades.</p>
-        </div>
-
         <div className="grid-item item-14-col1-col2">
           <div className="p-2 d-flex justify-content-center align-items-center h-100 w-100">
             <img src={Footer} alt="Footer" className="img-fluid" style={{ width: '30%' }} />
           </div>
         </div>
+
+        
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

@@ -1,89 +1,66 @@
-
-import clsx from 'clsx'
-import {FC} from 'react'
-import {toAbsoluteUrl} from '../../../helpers'
-import {useLang, setLanguage} from '../../../i18n/Metronici18n'
+import React from "react";
+import clsx from "clsx";
+import { useLang, setLanguage } from '../../../i18n/Metronici18n';
+import { toAbsoluteUrl } from '../../../helpers';
 
 const languages = [
   {
+    lang: 'col',
+    name: 'Colombian',
+    flag: toAbsoluteUrl('media/flags/colombia.svg'),
+  },
+  {
     lang: 'en',
-    name: 'English',
     flag: toAbsoluteUrl('media/flags/united-states.svg'),
   },
-  // {
-  //   lang: 'zh',
-  //   name: 'Mandarin',
-  //   flag: toAbsoluteUrl('media/flags/china.svg'),
-  // },
   {
     lang: 'es',
-    name: 'Spanish',
     flag: toAbsoluteUrl('media/flags/spain.svg'),
   },
-  // {
-  //   lang: 'ja',
-  //   name: 'Japanese',
-  //   flag: toAbsoluteUrl('media/flags/japan.svg'),
-  // },
-  // {
-  //   lang: 'de',
-  //   name: 'German',
-  //   flag: toAbsoluteUrl('media/flags/germany.svg'),
-  // },
-  // {
-  //   lang: 'fr',
-  //   name: 'French',
-  //   flag: toAbsoluteUrl('media/flags/france.svg'),
-  // },
-]
+ 
+];
 
-const Languages: FC = () => {
-  const lang = useLang()
-  const currentLanguage = languages.find((x) => x.lang === lang)
+const Languages = () => {
+  const lang = useLang();
+  const currentLanguage = languages.find((x) => x.lang === lang);
+
   return (
-    <div
-      className='menu-item px-5'
-      data-kt-menu-trigger='hover'
-      data-kt-menu-placement='left-start'
-      data-kt-menu-flip='bottom'
-    >
-      <a href='#' className='menu-link px-5'>
-        <span className='menu-title position-relative'>
-          Idioma
-          <span className='fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0'>
-            {currentLanguage?.name}{' '}
-            <img
-              className='w-15px h-15px rounded-1 ms-2'
-              src={currentLanguage?.flag}
-              alt='metronic'
-            />
-          </span>
-        </span>
-      </a>
+    <div className="menu-item dropdown px-5">
+      <button
+        className="btn btn-icon btn-active-color-primary d-flex align-items-center"
+        id="kt_language_menu_toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          className="w-20px h-20px rounded-1"
+          src={currentLanguage?.flag}
+          alt={`Flag of ${currentLanguage?.lang}`}
+        />
+      </button>
 
-      <div className='menu-sub menu-sub-dropdown w-175px py-4'>
+      <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="kt_language_menu_toggle">
         {languages.map((l) => (
-          <div
-            className='menu-item px-3'
-            key={l.lang}
-            onClick={() => {
-              setLanguage(l.lang)
-            }}
-          >
+          <li key={l.lang}>
             <a
-              href='#'
-              className={clsx('menu-link d-flex px-5', {active: l.lang === currentLanguage?.lang})}
+              className={clsx('dropdown-item d-flex align-items-center', { 'active': l.lang === currentLanguage?.lang })}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setLanguage(l.lang);
+              }}
             >
-              <span className='symbol symbol-20px me-4'>
-                <img className='rounded-1' src={l.flag} alt='metronic' />
-              </span>
-              {l.name}
+              <img
+                className="w-20px h-20px rounded-1 me-2"
+                src={l.flag}
+                alt={`Flag of ${l.lang}`}
+              />
             </a>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export {Languages}
+export { Languages };

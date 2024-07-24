@@ -1,104 +1,71 @@
-import clsx from 'clsx'
-import {KTIcon} from '../../../helpers'
-import {ThemeModeComponent} from '../../../assets/ts/layout'
-import {ThemeModeType, useThemeMode} from './ThemeModeProvider'
-
+import React from 'react';
+import { KTIcon } from '../../../helpers';
+import { ThemeModeComponent } from '../../../assets/ts/layout';
+import { ThemeModeType, useThemeMode } from './ThemeModeProvider';
+import clsx from 'clsx';
 
 type Props = {
-  toggleBtnClass?: string
-  toggleBtnIconClass?: string
-  menuPlacement?: string
-  menuTrigger?: string
-}
+  toggleBtnClass?: string;
+  toggleBtnIconClass?: string;
+};
 
-const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark'
+const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark';
 
 const ThemeModeSwitcher = ({
   toggleBtnClass = '',
-  toggleBtnIconClass = 'fs-1',
-  menuPlacement = 'bottom-end',
-  menuTrigger = "{default: 'click', lg: 'hover'}",
+  toggleBtnIconClass = 'fs-3', // Cambiado a 'fs-3' para un tamaño de fuente más pequeño
 }: Props) => {
-  const {mode, menuMode, updateMode, updateMenuMode} = useThemeMode()
-  const calculatedMode = mode === 'system' ? systemMode : mode
+  const { mode, menuMode, updateMode, updateMenuMode } = useThemeMode();
+  const calculatedMode = mode === 'system' ? systemMode : mode;
+
   const switchMode = (_mode: ThemeModeType) => {
-    updateMenuMode(_mode)
-    updateMode(_mode)
-  }
+    updateMenuMode(_mode);
+    updateMode(_mode);
+  };
 
   return (
-    <>
-      {/* begin::Menu toggle */}
-      <a
-        href='#'
-        className={clsx('btn btn-icon ', toggleBtnClass)}
-        data-kt-menu-trigger={menuTrigger}
-        data-kt-menu-attach='parent'
-        data-kt-menu-placement={menuPlacement}
+    <div className="dropdown">
+      {/* Menu toggle */}
+      <button
+        className={clsx('btn btn-icon dropdown-toggle', toggleBtnClass)}
+        type="button"
+        id="themeModeSwitcher"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
       >
         {calculatedMode === 'dark' && (
-          <KTIcon iconName='moon' className={clsx('theme-light-hide', toggleBtnIconClass)} />
+          <KTIcon iconName="moon" className={clsx('theme-light-hide', toggleBtnIconClass)} />
         )}
-
         {calculatedMode === 'light' && (
-          <KTIcon iconName='night-day' className={clsx('theme-dark-hide', toggleBtnIconClass)} />
+          <KTIcon iconName="night-day" className={clsx('theme-dark-hide', toggleBtnIconClass)} />
         )}
-      </a>
-      {/* begin::Menu toggle */}
+      </button>
 
-      {/* begin::Menu */}
-      <div
-        className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-primary fw-semibold py-4 fs-base w-175px'
-        data-kt-menu='true'
-      >
-        {/* begin::Menu item */}
-        <div className='menu-item px-3 my-0'>
+      {/* Dropdown menu */}
+      <ul className="dropdown-menu" aria-labelledby="themeModeSwitcher">
+        <li>
           <a
-            href='#'
-            className={clsx('menu-link px-3 py-2', {active: menuMode === 'light'})}
+            className={clsx('dropdown-item', { active: menuMode === 'light' })}
+            href="#"
             onClick={() => switchMode('light')}
           >
-            <span className='menu-icon' data-kt-element='icon'>
-              <KTIcon iconName='night-day' className='fs-1' />
-            </span>
-            <span className='menu-title'>Light</span>
+            <KTIcon iconName="night-day" className="fs-6 me-2" /> {/* Tamaño de fuente ajustado aquí */}
+            Light
           </a>
-        </div>
-        {/* end::Menu item */}
-
-        {/* begin::Menu item */}
-        <div className='menu-item px-3 my-0'>
+        </li>
+        <li>
           <a
-            href='#'
-            className={clsx('menu-link px-3 py-2', {active: menuMode === 'dark'})}
+            className={clsx('dropdown-item', { active: menuMode === 'dark' })}
+            href="#"
             onClick={() => switchMode('dark')}
           >
-            <span className='menu-icon' data-kt-element='icon'>
-              <KTIcon iconName='moon' className='fs-1' />
-            </span>
-            <span className='menu-title'>Dark</span>
+            <KTIcon iconName="moon" className="fs-6 me-2" /> {/* Tamaño de fuente ajustado aquí */}
+            Dark
           </a>
-        </div>
-        {/* end::Menu item */}
+        </li>
+      </ul>
+    </div>
+  );
+};
 
-        {/* begin::Menu item */}
-        <div className='menu-item px-3 my-0'>
-          <a
-            href='#'
-            className={clsx('menu-link px-3 py-2', {active: menuMode === 'system'})}
-            onClick={() => switchMode('system')}
-          >
-            <span className='menu-icon' data-kt-element='icon'>
-              <KTIcon iconName='screen' className='fs-1' />
-            </span>
-            <span className='menu-title'>System</span>
-          </a>
-        </div>
-        {/* end::Menu item */}
-      </div>
-      {/* end::Menu */}
-    </>
-  )
-}
-
-export {ThemeModeSwitcher}
+export { ThemeModeSwitcher };
