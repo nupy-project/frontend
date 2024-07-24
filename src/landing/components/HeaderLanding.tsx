@@ -6,6 +6,7 @@ import { ThemeModeSwitcher } from '../../features/partials/layout/theme-mode/The
 import { Languages } from '../../features/partials/layout/header-menus/Languages';
 import clsx from "clsx";
 import { useThemeMode } from '../../features/partials/layout/theme-mode/ThemeModeProvider';
+import './HeaderLanding.scss';
 
 const HeaderLanding = () => {
   const { mode } = useThemeMode();
@@ -101,7 +102,7 @@ const HeaderLanding = () => {
           <div className="flex-equal text-end ms-1">
             <Link
               to="/auth/login"
-              className="btn btn-success"
+              className="btn btn-success init "
               style={{
                 backgroundColor: "#0beea6",
                 color: "#000",
