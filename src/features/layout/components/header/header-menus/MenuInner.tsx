@@ -6,13 +6,14 @@ export function MenuInner() {
   return (
     <>
       <MenuItem
-        title={intl.formatMessage({ id: "MENU.DASHBOARD" })}
+        title={intl.formatMessage({ id: "Inicio" })}
         to="/dashboard"
       />
-      <MenuItem title="Ingreso" to="/ingress" />
-      <MenuItem title="Egreso" to="/income" />
-      <MenuItem title="Targetas" to="/cards" />
+      <MenuItem title="Salidas" to="/Salidas" />
+      <MenuItem title="Ingresos" to="/Ingresos" />
+      <MenuItem title="Targetas" to="/Targetas" />
       <MenuItem title="Dispersion USDT" to="/usdt-dispersion" />
+      <MenuItem title="Detail" to="/Detail" />
     </>
   );
 }

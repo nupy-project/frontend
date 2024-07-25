@@ -54,7 +54,7 @@ const ChartsWidget9: FC<Props> = ({ className }) => {
       {/* begin::Body */}
       <div className='card-body'>
         {/* begin::Chart */}
-        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{ height: '350px' }}></div>
+        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{ height: '370px' }}></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}

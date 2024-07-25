@@ -19,7 +19,7 @@ const LandingPage = () => {
         <div id='inicio' className="grid-item item-combined">
           <HeaderLanding />
         </div>
-
+    
         <div className="grid-item item-2-3-col2 d-flex flex-column justify-content-start position-relative" style={{ maxWidth: '800px', minWidth: '500px' }}>
           <div className="p-2 d-flex flex-column position-relative" style={{ right: '10%' }}>
             <img src={computer} alt="Computadora mostrando soluciones de pago" className="img-fluid" />
