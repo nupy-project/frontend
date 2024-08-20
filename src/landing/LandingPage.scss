@@ -329,7 +329,7 @@ li{
   }
 
   .item-combined {
-    order: 1;
+    order: 3;
   }
 
   .item-2-3-col2 {
@@ -337,7 +337,7 @@ li{
   }
 
   .item-combined-2-3 {
-    order: 3;
+    order: 1;
   }
 
   .item-combined-col1-row1-2 {
@@ -351,6 +351,10 @@ li{
   .item-4-5-col2 {
     order: 6;
  
+  }
+
+  .item-8-9-col2{
+    order: 7;
   }
   .item-4-5-col2 div img{
     margin-right: 0 !important;

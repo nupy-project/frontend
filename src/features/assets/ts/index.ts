@@ -59,6 +59,8 @@ import Tron from '../../assets/images/Tron.png';
 import Visa from '../../assets/images/Visa.png';
 import cel from '../../assets/images/cel.png';
 import Footer from '../../assets/images/Footer.png';
+import Nequi from '../../assets/images/Nequi.png';
+import PSE from '../../assets/images/PSE.png';
 
 export {
   computer,
@@ -72,5 +74,7 @@ export {
   Tron,
   Visa,
   cel,
-  Footer
+  Footer,
+  Nequi,
+  PSE
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useThemeMode } from '../features/partials/layout/theme-mode/ThemeModeProvider';
-import { computer, Colash1, Colash2, targeta, Beneficio, wallet, Visa, Efecty, Tron, Baloto, cel,  } from '../features/assets/ts';
+import { computer, Colash1, Colash2, targeta, Beneficio, wallet, Visa, Efecty, Tron, Baloto, cel, Nequi,PSE } from '../features/assets/ts';
 import { Footer } from '../features/assets/ts';
 import HeaderLanding from './components/HeaderLanding';
 import './LandingPage.scss';
@@ -39,6 +39,7 @@ const LandingPage = () => {
           <h1 className='display-4 mb-3'>Recibe y gestiona <br /> pagos desde tu <br />Dashboard</h1>
           <span className="lead text-left mb-3">En NuPay, tus necesidades de recaudo <br /> están cubiertas de manera ágil y segura</span>
         </div>
+
 
         <div id='Productos' className="grid-item item-combined-col1-2-row2 p-8 d-flex flex-column align-items-start justify-content-center text-start p-9">
           <h2 className='display-4 mb-4' style={{ color: '#0beea6' }}>Cash In</h2>
@@ -110,8 +111,8 @@ const LandingPage = () => {
         <div className="grid-item item-11-col1-col2 d-flex justify-content-around align-items-center text-center text-md-start">
           <img src={Visa} alt="Visa" style={{ width: '15%' }} />
           <img src={Efecty} alt="Efecty" style={{ width: '15%' }} />
-          <img src={Tron} alt="Tron" style={{ width: '15%' }} />
-          <img src={Baloto} alt="Baloto" style={{ width: '15%' }} />
+          <img src={PSE} alt="Tron" style={{ width: '15%' }} />
+          <img src={Nequi} alt="Baloto" style={{ width: '15%' }} />
         </div>
 
         <div className="grid-item item-12-13-col1">

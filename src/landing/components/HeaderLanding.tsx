@@ -29,7 +29,7 @@ const HeaderLanding = () => {
               </i>
             </button>
             <a href="#inicio" className="text-dark text-decoration-none fs-3 fw-bold">
-              <img src={Logo} alt="Logo" className="w-50"/>
+              <img src={Logo} alt="Logo" className="w-100"/>
             </a>
           </div>
 
